@@ -4,7 +4,7 @@ Analyze the code from remote git repositories and show how they grew over time.
 
 ### Sample 
 I used this to create this chart of my [blood pressure monitor](https://github.com/NobodyForNothing/blood-pressure-monitor-fl/) project:
-![lines of bp-monitor project](sample_chart.png)
+![lines of bp-monitor project](https://github.com/user-attachments/assets/b8ca38a4-826d-4a1b-aec6-b379b8cc0463)
 
 ### Usage
 To run this for the sample repo install the requirements `pip install -r requirements.txt ` and run the project.
