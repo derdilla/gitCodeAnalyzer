@@ -46,7 +46,7 @@ impl Analyzer {
     pub fn commits(&self) -> Result<CommitIterator<'_>, Box<dyn Error>> {
         let mut head = self.repo.head()?;
         let head_commit = head.peel_to_commit_in_place()?;
-        let ancestors = head_commit.ancestors().all()?;
+        let ancestors = head_commit.ancestors().first_parent_only().all()?;
 
         Ok(CommitIterator {
             repo: &self.repo,
@@ -58,7 +58,7 @@ impl Analyzer {
     pub fn commit_count(&self) -> Result<usize, Box<dyn Error>> {
         let mut head = self.repo.head()?;
         let head_commit = head.peel_to_commit_in_place()?;
-        let count = head_commit.ancestors().all()?.count();
+        let count = head_commit.ancestors().first_parent_only().all()?.count();
         Ok(count)
     }
 }

@@ -9,8 +9,8 @@ mod output_writer;
 
 fn main() {
     println!("Checking out repository...");
-    let repo = analyzer::Analyzer::open_local(PathBuf::from("./testrepo"));
-    //let repo = analyzer::Analyzer::clone_from_url("https://github.com/derdilla/blood-pressure-monitor-fl.git");
+    //let repo = analyzer::Analyzer::open_local(PathBuf::from("./testrepo"));
+    let repo = analyzer::Analyzer::clone_from_url("https://github.com/derdilla/blood-pressure-monitor-fl.git");
     //let repo = analyzer::Analyzer::clone_from_url("https://github.com/derdilla/aosp-analyzer.git");
     let repo = repo.unwrap();
 
